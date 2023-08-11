@@ -1,0 +1,49 @@
+body{
+	background-image: url(../images/peace.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+#stream-video{
+	background: #333333;
+	width: 70%;
+}
+
+
+#take-snap-id{
+	width: 30%;
+}
+/**
+ * Before the photos have been taken
+ */
+.take-photo-div{
+	display: flex;
+}
+
+/**
+ * After the photos have been taken
+ */
+#taken-photos-div{
+	margin-top: 20px;
+	display: flex;
+}
+
+#image-styling-div{
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+}
+
+#placeholder-photo{
+	width: 70%;
+	height: 300px;
+}
+
+
+#photos-canvas{
+	display: none;
+	width: 70%;
+}
+
+h5.modal-title{
+	color: black;
+}

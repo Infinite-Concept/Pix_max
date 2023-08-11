@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="canonical" href="index.html">
+
+    <title>PixMix</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="https://getbootstrap.com/docs/3.3/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <link rel='stylesheet' href='css/app.css'>
+
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">PixMix</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li class="active"><a href="#">Welcome</a></li>
+                  <li><a href="#">Features</a></li>
+                  <li><a href="#">Download</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">Create Fantastic Photos.</h1>
+            <p class="lead">PixMix lets you create and edit your own photos using your browser. It is a fantastic flexible solution. </p>
+            <p class="lead">
+              <button class="btn btn-lg btn-default" id='px-take-photo-id'><i class="glyphicon glyphicon-camera"></i>  Try it out.</button>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <!--<div class="inner">
+              <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>-->
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Modal -->
+  <div class="modal" tabindex="-1" role="dialog" id='takePhotoModal'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title">Take A Photo</h5>
+      
+      </div>
+      <div class="modal-body">
+        <div class='take-photo-div'>
+          <video id='stream-video' width='400' height='300'></video>
+
+        <button type='button' class='btn btn-sm btn-success' id='take-snap-id'>
+            <i class="glyphicon glyphicon-camera" style='font-size: 32px;'></i>
+            <h4> Snap </h4>
+        </button>
+        </div>
+
+        <div id='taken-photos-div'>
+          <canvas id='photos-canvas' width='400' height='300'></canvas>
+          <img src='images/placeholder.png' alt='Placeholer image' id='placeholder-photo' width='400'>
+          <div class="filter">
+            <div class='options'>
+              <button id="hue" class="active">Hue</button>
+              <button id="colorize">Colorize</button>
+              <button id="grayscale">Grayscale</button>
+              <button id="brightness" >Brightness</button>
+              <button id="saturation">Saturation</button>
+              <button id="inversion">Inversion</button>
+            </div>
+
+            <div class="slider">
+              <div class="filter-info">
+                  <p class="name">Hue</p>
+                  <p class="value">100%</p>
+              </div>
+              <input type="range" value="100" min="0" max="200">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id='close-modal-id'>Close</button>
+        <button class='btn' id='save-photo-id'> <i class="glyphicon glyphicon-floppy-save"></i>Save </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- End of Modal -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://getbootstrap.com/docs/3.3/dist/js/bootstrap.min.js"></script>
+    
+    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src='js/app.js'></script>
+  </body>
+
+</html>
