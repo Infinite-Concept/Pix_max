@@ -93,7 +93,7 @@ resetFilterBtn = document.querySelector("#clear_filter"),
 previewImg = document.querySelector("#placeholder-photo"),
 saveImgBtn = document.querySelector("#save-photo-id");
 
-let brightness = "100", saturation = "100", inversion = "0", blur = "0", contrast = "100", grayscale = "0";
+let brightness = "100", saturation = "100", inversion = "0", hue_rotate = "0", contrast = "100", grayscale = "0";
 
 
 
@@ -115,10 +115,10 @@ filterOptions.forEach(option => {
             filterSlider.max = "100";
             filterSlider.value = inversion;
             filterValue.innerText = `${inversion}%`;
-        }else if(option.id === "blur") {
+        }else if(option.id === "hue_rotate") {
             filterSlider.max = "100";
-            filterSlider.value = blur;
-            filterValue.innerText = `${blur}px`;
+            filterSlider.value = hue_rotate;
+            filterValue.innerText = `${hue_rotate}deg`;
         }else if(option.id === "contrast") {
             filterSlider.max = "100";
             filterSlider.value = contrast;
@@ -135,7 +135,7 @@ filterOptions.forEach(option => {
 
 // apply filter
 const applyFilter = () => {
-    previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) blur(${blur}px) contrast(${contrast}%) grayscale(${grayscale}%)`;
+    previewImg.style.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) hue-rotate(${hue_rotate}deg) contrast(${contrast}%) grayscale(${grayscale}%)`;
 }
 
 //update filter
@@ -149,8 +149,8 @@ const updateFilter = () => {
         saturation = filterSlider.value;
     } else if(selectedFilter.id === "inversion") {
         inversion = filterSlider.value;
-    }else if(selectedFilter.id === "blur") {
-        blur = filterSlider.value;
+    }else if(selectedFilter.id === "hue_rotate") {
+        hue_rotate = filterSlider.value;
     }else if(selectedFilter.id === "contrast") {
         contrast = filterSlider.value;
     } else {
@@ -161,7 +161,7 @@ const updateFilter = () => {
 
 //reset filter button
 const resetFilter = () => {
-    brightness = "100"; saturation = "100"; blur="0"; contrast="100"; inversion = "0"; grayscale = "0";
+    brightness = "100"; saturation = "100"; hue_rotate="0"; contrast="100"; inversion = "0"; grayscale = "0";
     filterOptions[0].click();
     applyFilter();
 }
@@ -170,7 +170,7 @@ const saveImage = () => {
     canvas.width = previewImg.naturalWidth;
     canvas.height = previewImg.naturalHeight;
     
-    context.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) blur(${blur}%) contrast(${contrast}%) grayscale(${grayscale}%)`;
+    context.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) hue-rotate(${hue_rotate}deg) contrast(${contrast}%) grayscale(${grayscale}%)`;
     context.translate(canvas.width / 2, canvas.height / 2);
     
     context.drawImage(previewImg, -canvas.width / 2, -canvas.height / 2, canvas.width, canvas.height);
