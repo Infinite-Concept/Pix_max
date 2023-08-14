@@ -93,17 +93,17 @@
           <img src='images/placeholder.png' alt='Placeholer image' id='placeholder-photo' width='400'>
           <div class="filter">
             <div class='options'>
-              <button id="hue" class="active">Hue</button>
-              <button id="colorize">Colorize</button>
-              <button id="grayscale">Grayscale</button>
-              <button id="brightness" >Brightness</button>
+              <button id="brightness">Brightness</button>
               <button id="saturation">Saturation</button>
               <button id="inversion">Inversion</button>
+              <button id="blur">Blur</button>
+              <button id="contrast">Contrast</button>
+              <button id="grayscale">Grayscale</button>
             </div>
 
             <div class="slider">
               <div class="filter-info">
-                  <p class="name">Hue</p>
+                  <p class="name">Brightness</p>
                   <p class="value">100%</p>
               </div>
               <input type="range" value="100" min="0" max="200">
@@ -116,7 +116,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal" id='close-modal-id'>Close</button>
         <button class='btn' id='save-photo-id'> <i class="glyphicon glyphicon-floppy-save"></i>Save </button>
-        <button class='reset-filter btn' id='clear_filter'> <i class="glyphicon glyphicon-floppy-save"></i>Clear Filters</button>
+        <button class='reset-filter btn' id='clear_filter'>Clear Filters</button>
       </div>
     </div>
   </div>

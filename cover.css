@@ -176,18 +176,20 @@ body {
 
 .filter .options button {
   width: 100%;
-  border: none;
-  border-radius: 10px;
-  background-color: blue;
-  margin-bottom: 5px;
-  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: transparent;
+  color: black;
+  margin-bottom: 2px;
+  padding: 11px 20px;
   font-weight: 400;
+  margin-bottom: 7px;
 }
 
-.filter button.active {
+.filter .options button.active {
   color: #fff;
-  border-color: #5372F0;
-  background: #5372F0;
+  background: navy;
+  border: none;
 }
 
 .filter .slider .filter-info {
@@ -205,4 +207,25 @@ body {
 
 .modal-footer #save-photo-id{
   background-color: blue;
+}
+
+.reset-filter{
+  border: 1px solid #6C757D;
+  color: #6C757D;
+  float: left;
+  
+}
+
+.reset-filter:hover{
+  background-color: #6C757D;
+  color: white;
+}
+
+.modal-footer .btn{
+  padding: 11px 20px;
+  font-size: 14px;
+}
+
+#save-photo-id:hover{
+  color: #fff;
 }
